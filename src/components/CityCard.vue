@@ -11,7 +11,7 @@
             </div>
             <v-list-item-title class="headline mb-1">
               <p class="gray-dark-font ">
-                {{ temperature }}
+                {{ temperature }} {{ temperatureMode }}
               </p>
             </v-list-item-title>
             <v-list-item-subtitle>
@@ -46,6 +46,7 @@ export default {
     return {
       apiKey: process.env.VUE_APP_ACCU_WEATHER_API_KEY,
       temperature: undefined,
+      temperatureMode: 
       icon: undefined,
       description: undefined
     };
@@ -103,6 +104,7 @@ export default {
 
   created() {
     this.getCurrentWeather();
+    this.temperatureMode = this.celsius ? 'c' : 'f' 
   },
 };
 </script>
