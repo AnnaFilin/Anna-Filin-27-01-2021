@@ -72,7 +72,7 @@ export default {
     async getCurrentWeather() {
       console.log(this.city.Key);
       try {
-        const { data } = await axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${this.city.Key}?apikey=${this.apiKey}&details=true`)
+        const { data } = await axios.get(`https://dataservice.accuweather.com/currentconditions/v1/${this.city.Key}?apikey=${this.apiKey}&details=true`)
         
         if(!data) {
           throw new Error()

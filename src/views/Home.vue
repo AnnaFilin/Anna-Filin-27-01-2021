@@ -98,7 +98,7 @@ export default {
 
     async getLocationWeather(location) {
       try {
-        const { data } = await axios.get(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${location.Key}?apikey=${this.apiKey}&details=true&metric=${this.celsius ? true : false }`)
+        const { data } = await axios.get(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${location.Key}?apikey=${this.apiKey}&details=true&metric=${this.celsius ? true : false }`)
         if(!data) {
           throw new Error()
         }
@@ -114,7 +114,7 @@ export default {
     async checkLocationKey() {
       try {
         let latlngString = this.currLocation.lat + ',' + this.currLocation.lng
-        const { data } = await axios.get(`http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=${this.apiKey}&q=${latlngString}&details=true`)
+        const { data } = await axios.get(`https://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=${this.apiKey}&q=${latlngString}&details=true`)
         if(!data) {
           throw new Error()
         }

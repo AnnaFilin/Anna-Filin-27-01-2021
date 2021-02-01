@@ -56,7 +56,7 @@ export default {
   methods: {
     async searchLocation(searchStr) {
       try {
-        const { data } = await axios.get(`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${this.apiKey}&q=${searchStr}`)
+        const { data } = await axios.get(`https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${this.apiKey}&q=${searchStr}`)
         if(!data) {
           throw new Error()
         }
