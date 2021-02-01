@@ -68,7 +68,8 @@ export default {
 
   watch: {
     celsius() {
-      return this.temperature = this.celsius ? this.weather.Temperature.Metric.Value: this.weather.Temperature.Imperial.Value;
+      this.temperature = this.celsius ? this.weather.Temperature.Metric.Value: this.weather.Temperature.Imperial.Value;
+      this.temperatureMode = this.celsius ? 'C' : 'F' 
     }
   },
 
