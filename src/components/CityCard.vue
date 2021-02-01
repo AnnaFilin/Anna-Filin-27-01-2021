@@ -46,7 +46,7 @@ export default {
     return {
       apiKey: process.env.VUE_APP_ACCU_WEATHER_API_KEY,
       temperature: undefined,
-      temperatureMode: 
+      temperatureMode: undefined,
       icon: undefined,
       description: undefined
     };
