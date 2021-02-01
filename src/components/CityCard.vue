@@ -66,6 +66,13 @@ export default {
 
   },
 
+  watch(){
+    temperatureMode() {
+      return this.temperature = this.celsius ? this.weather.Temperature.Metric.Value: this.weather.Temperature.Imperial.Value;
+
+    }
+  },
+
   methods: {
     ...mapActions({
       changeForecastLocation: "favorites/changeForecastLocation",
@@ -79,6 +86,7 @@ export default {
           throw new Error()
         }
 
+        this.weather = data[0]
         this.temperature = this.celsius ? data[0].Temperature.Metric.Value: data[0].Temperature.Imperial.Value;
         this.description = data[0].WeatherText;
         let num = data[0].WeatherIcon.Icon >= 10 ? data[0].WeatherIcon : data[0].WeatherIcon.toString().padStart(2, "0");
